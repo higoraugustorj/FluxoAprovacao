@@ -5,15 +5,13 @@ import Model.Pedidos.Pedido;
 public class ComplianceHandler extends Handler {
     String regra = "<Compliance> Pedido deve conter no mínimo três cotações de Fornecedores aprovados";
 
-    public ComplianceHandler() {
-        setNext(new TiHandler());
-    }
 
     @Override
     public void validar(Pedido pedido) {
         sleep();
         if (pedido.cotacoesValidas >= 3) {
             System.out.println("\uD83C\uDD97 APROVADO: " + regra);
+            setNext(new TiHandler());
             next.validar(pedido);
             return;
         }

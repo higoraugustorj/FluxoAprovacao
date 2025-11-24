@@ -9,6 +9,8 @@ public class TiHandler extends Handler {
         sleep();
         if (!pedido.equipamentoTI) {
             System.out.println("\uD83C\uDD97 APROVADO: " + regra + ": ÁREA SOLICITANTE: " + pedido.areaSolicitante);
+            setNext(new DefinirImpostos());
+            next.validar(pedido);
             return;
         }
         System.out.println("\uD83D\uDDD9 REPROVADO: " + regra + ": ÁREA SOLICITANTE: " + pedido.areaSolicitante);

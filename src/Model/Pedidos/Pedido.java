@@ -12,7 +12,7 @@ public class Pedido {
     public String descricao;
     public ArrayList<Cotacao> cotacoes;
     public boolean equipamentoTI;
-    public Double taxas;
+    public Double taxas = 0.0;
     public Double valor;
 
     public Pedido(String descricao, ArrayList<Cotacao> cotacoes, boolean equipamentoTI) {
@@ -21,6 +21,7 @@ public class Pedido {
         this.cotacoes = cotacoes;
         this.equipamentoTI = equipamentoTI;
         contarCotacoesValidas();
+        definirCotacaoVencedora();
     }
 
     public void mostrarDados() {
@@ -68,5 +69,15 @@ public class Pedido {
 
     private void mostrarAreaSolicitante() {
         System.out.println("Área Solicitante: " + areaSolicitante);
+    }
+
+    private void definirCotacaoVencedora() {
+        Double menorValor = 100000.0;
+        for (Cotacao cotacao : cotacoes) {
+            if (cotacao.valor < menorValor) {
+                cotacaoSelecionada = cotacao;
+                valor = cotacao.valor;
+            }
+        }
     }
 }
