@@ -10,5 +10,6 @@ public class Cotacao {
     public Cotacao(String descricaoProduto, String nomeFornecedor, boolean compraPermitida, Double valor) {
         this.descricaoProduto = descricaoProduto;
         fornecedor = new Fornecedor(nomeFornecedor, compraPermitida);
+        this.valor = valor;
     }
 }

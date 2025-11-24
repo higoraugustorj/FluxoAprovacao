@@ -1,4 +1,4 @@
-package Model;
+package Model.Pedidos;
 
 import Model.Cotacoes.Cotacao;
 
@@ -9,4 +9,8 @@ public class Pedido {
     public boolean equipamentoTI;
     public Double valor;
 
+    public Pedido(ArrayList<Cotacao> cotacoes, boolean equipamentoTI) {
+        this.cotacoes = cotacoes;
+        this.equipamentoTI = equipamentoTI;
+    }
 }
