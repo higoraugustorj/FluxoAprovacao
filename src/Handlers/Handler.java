@@ -15,7 +15,12 @@ public abstract class Handler {
 
     public abstract void validar(Pedido pedido);
 
-    protected void sleep(int segundos) {
-        LockSupport.parkNanos(TimeUnit.SECONDS.toNanos(segundos));
+    protected void sleep() {
+        LockSupport.parkNanos(TimeUnit.SECONDS.toNanos(3));
+    }
+
+    protected void rejeitarPedido(Pedido pedido) {
+        setNext(new PedidoRejeitadoHandler());
+        next.validar(pedido);
     }
 }

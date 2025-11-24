@@ -11,12 +11,13 @@ public class ComplianceHandler extends Handler {
 
     @Override
     public void validar(Pedido pedido) {
-        sleep(2);
+        sleep();
         if (pedido.cotacoesValidas >= 3) {
             System.out.println("\uD83C\uDD97 APROVADO: " + regra);
             next.validar(pedido);
             return;
         }
         System.out.println("\uD83D\uDDD9 REPROVADO: " + regra);
+        rejeitarPedido(pedido);
     }
 }

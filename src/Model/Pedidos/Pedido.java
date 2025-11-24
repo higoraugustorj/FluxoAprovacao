@@ -12,6 +12,7 @@ public class Pedido {
     public String descricao;
     public ArrayList<Cotacao> cotacoes;
     public boolean equipamentoTI;
+    public Double taxas;
     public Double valor;
 
     public Pedido(String descricao, ArrayList<Cotacao> cotacoes, boolean equipamentoTI) {
