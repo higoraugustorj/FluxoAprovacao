@@ -1,6 +1,5 @@
 package Handlers;
 
-import Model.Cotacoes.Cotacao;
 import Model.Pedidos.Pedido;
 
 public class MostrarDadosHandler extends Handler {

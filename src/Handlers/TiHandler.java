@@ -2,9 +2,6 @@ package Handlers;
 
 import Model.Pedidos.Pedido;
 
-import java.util.concurrent.TimeUnit;
-import java.util.concurrent.locks.LockSupport;
-
 public class TiHandler extends Handler {
     String regra = "<TI> Pedidos de equipamentos de TI devem ser realizados pelo Almoxarifado";
     @Override
