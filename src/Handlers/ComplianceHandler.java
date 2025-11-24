@@ -10,14 +10,13 @@ public class ComplianceHandler extends Handler {
     String regra = "<Compliance> Pedido deve conter no mínimo três cotações de Fornecedores aprovados";
 
     public ComplianceHandler() {
-        next = new TiHandler();
+        setNext(new TiHandler());
     }
 
     @Override
     public void validar(Pedido pedido) {
-        sleep(1);
-        int fornecedoresValidos = getFornecedoresValidos(pedido);
-        if (fornecedoresValidos >= 3) {
+        sleep(2);
+        if (pedido.cotacoesValidas >= 3) {
             System.out.println("\uD83C\uDD97 APROVADO: " + regra);
             next.validar(pedido);
             return;

@@ -1,5 +1,5 @@
-import Handlers.ComplianceHandler;
 import Handlers.Handler;
+import Handlers.MostrarDadosHandler;
 import Model.Pedidos.Pedido;
 import Model.Pedidos.PedidosMock;
 
@@ -11,8 +11,8 @@ public class Main {
         Pedido pedidoStopCollars = PedidosMock.getPedidoStopCollars();
         Pedido pedidoFloatShoes = PedidosMock.getPedidoFloatShoes();
 
-        Handler compliance = new ComplianceHandler();
+        Handler inicio = new MostrarDadosHandler();
 
-        compliance.validar(pedidoCentralizadores);
+        inicio.validar(pedidoCentralizadores);
     }
 }
