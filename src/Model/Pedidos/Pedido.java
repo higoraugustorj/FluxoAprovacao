@@ -25,13 +25,17 @@ public class Pedido {
     }
 
     public void mostrarDados() {
-        System.out.println("----------------------");
-        System.out.println("*** Dados do Pedido ***");
+        System.out.println(":: Dados do Pedido ::");
+        System.out.println("------------------------------------------------------------------");
         mostrarDescricaoProduto();
         mostrarEquipamentoTI();
         mostrarAreaSolicitante();
         mostrarQuantidadeCotacoes();
+        System.out.println("------------------------------------------------------------------");
+        System.out.println("Fornecedor\t\t\t\tNacionalidade\t\t\t\tValor cotado");
         mostrarDadosCotacoes();
+        System.out.println("------------------------------------------------------------------");
+        mostrarCotacaoSelecionada();
     }
 
     private void contarCotacoesValidas() {
@@ -43,7 +47,6 @@ public class Pedido {
     }
 
     private void mostrarDescricaoProduto() {
-        System.out.println("----------------------");
         System.out.println("Descrição do Produto: " + descricao);
     }
 
@@ -75,9 +78,15 @@ public class Pedido {
         Double menorValor = 100000.0;
         for (Cotacao cotacao : cotacoes) {
             if (cotacao.valor < menorValor) {
+                menorValor = cotacao.valor;
                 cotacaoSelecionada = cotacao;
                 valor = cotacao.valor;
             }
         }
+    }
+
+    private void mostrarCotacaoSelecionada() {
+        System.out.println("Cotação selecionada:");
+        System.out.println(cotacaoSelecionada.fornecedor.nome + "\t\t\t\t" + cotacaoSelecionada.fornecedor.nacionalidade + "\t\t\t\t" + cotacaoSelecionada.valor + "\n");
     }
 }

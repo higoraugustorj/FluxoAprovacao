@@ -9,10 +9,13 @@ public class CalcularImpostosBrasil extends Handler {
         sleep();
         Double imposto = pedido.valor * taxa;
         pedido.taxas += imposto;
-        System.out.println("----------------------");
-        System.out.println("*** Impostos Nacionais ***");
+        sleep();
+        System.out.println("--> Etapa: << Calcular Impostos Nacionais >>");
+        sleep();
+        System.out.println("? Regra: Todo pedido deve ser submetido a impostos nacionais de 12%");
+        sleep();
         System.out.println("Taxa de imposto: " + taxa * 100 + "%");
-        System.out.println("Valor de Impostos Nacionais: R$ " + imposto);
+        System.out.println("Valor de Impostos Nacionais: R$ " + imposto + "\n");
         setNext(new OrcamentoFinanceiroHandler());
         next.validar(pedido);
     }

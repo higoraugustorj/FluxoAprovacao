@@ -3,19 +3,20 @@ package Handlers;
 import Model.Pedidos.Pedido;
 
 public class ComplianceHandler extends Handler {
-    String regra = "<Compliance> Pedido deve conter no mínimo três cotações de Fornecedores aprovados";
-
-
     @Override
     public void validar(Pedido pedido) {
         sleep();
+        System.out.println("--> Etapa: << Validação Compliance >>");
+        sleep();
+        System.out.println("? Regra: Pedido deve conter no mínimo três cotações de Fornecedores aprovados");
+        sleep();
         if (pedido.cotacoesValidas >= 3) {
-            System.out.println("\uD83C\uDD97 APROVADO: " + regra);
+            System.out.println("! Status: \uD83C\uDD97 APROVADO: O pedido possui " + pedido.cotacoesValidas + " cotações de Fornecedores aprovados.\n");
             setNext(new TiHandler());
             next.validar(pedido);
             return;
         }
-        System.out.println("\uD83D\uDDD9 REPROVADO: " + regra);
+        System.out.println("! Status: \uD83D\uDDD9 REPROVADO: O pedido possui menos de três cotações de Fornecedores aprovados.\n");
         rejeitarPedido(pedido);
     }
 }

@@ -11,17 +11,12 @@ public class MostrarDadosHandler extends Handler {
     @Override
     public void validar(Pedido pedido) {
         sleep();
-        System.out.println("----------------------");
-        System.out.println("*** Novo Pedido Realizado ***");
+        System.out.println(":: Gatilho: << Novo Pedido Realizado >>");
+        System.out.println(":: Processo iniciado: << Fluxo de Aprovação >>");
+        sleep();
+        System.out.println("--> Etapa: << Mostrar dados do Pedido >>\n");
+        sleep();
         pedido.mostrarDados();
-        sleep();
-        mostrarStatusAprovacao();
         next.validar(pedido);
-    }
-
-    private void mostrarStatusAprovacao() {
-        System.out.println("\n\n\n\n\n\n----------------------");
-        System.out.println("CADEIA DE VALIDAÇÃO DO PEDIDO INICIADA");
-        sleep();
     }
 }

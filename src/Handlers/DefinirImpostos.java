@@ -7,10 +7,11 @@ public class DefinirImpostos extends Handler {
     @Override
     public void validar(Pedido pedido) {
         sleep();
-        System.out.println("----------------------");
-        System.out.println("*** Definindo estratégia de cálculo de Impostos ***");
-        System.out.println("----------------------");
-        System.out.println("Nacionalidade do Pedido: " + pedido.cotacaoSelecionada.fornecedor.nacionalidade);
+        System.out.println("--> Etapa: << Definir estratégia de Impostos >>");
+        sleep();
+        System.out.println("? Condição: Pedidos de Fornecedores Internacionais devem ser acrescidos de impostos alfandegários");
+        sleep();
+        System.out.println("! Status: Nacionalidade do Pedido é " + pedido.cotacaoSelecionada.fornecedor.nacionalidade + "\n");
         if (pedido.cotacaoSelecionada.fornecedor.nacionalidade == Nacionalidade.BRASILEIRA) {
             setNext(new CalcularImpostosBrasil());
             next.validar(pedido);

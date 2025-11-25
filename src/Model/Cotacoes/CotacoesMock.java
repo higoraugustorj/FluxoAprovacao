@@ -10,7 +10,7 @@ public class CotacoesMock {
         cotacoes = new ArrayList<>();
         cotacoes.add(new Cotacao("Centralizador 22", "INNOVEX", true, 2200.0, Nacionalidade.BRASILEIRA));
         cotacoes.add(new Cotacao("Centralizador 22", "CENTEK", true, 2600.0, Nacionalidade.BRASILEIRA));
-        cotacoes.add(new Cotacao("Centralizador 22", "DAVIS LYNCH", true, 2200.0, Nacionalidade.OUTRA));
+        cotacoes.add(new Cotacao("Centralizador 22", "DAVIS LYNCH", true, 2300.0, Nacionalidade.OUTRA));
         return cotacoes;
     }
 

@@ -15,13 +15,7 @@ public class Cotacao {
     }
 
     public void mostrarDadosCotacao() {
-        System.out.println("----------------------");
-        System.out.println(":: Dados da Cotação ::");
-        fornecedor.mostrarDadosFornecedor();
-        mostrarValorCotado();
+        System.out.println(fornecedor.nome + "\t\t\t\t\t\t" + fornecedor.nacionalidade + "\t\t\t\t\t\t" + valor);
     }
 
-    private void mostrarValorCotado() {
-        System.out.println("Valor cotado: " + valor);
-    }
 }
