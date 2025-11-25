@@ -2,9 +2,9 @@ package Handlers;
 
 import Model.Pedidos.Pedido;
 
-public class AprovacaoGerente extends Handler {
-    public Double limite = 5000.0;
-    public String regra = "<Aprovação Gerente> Pedidos até " + limite + " podem ser aprovados pelo gerente";
+public class AprovacaoDiretor extends Handler {
+    public Double limite = 10000.0;
+    public String regra = "<Aprovação Diretor> Pedidos até " + limite + " podem ser aprovados pelo Diretor";
     @Override
     public void validar(Pedido pedido) {
         sleep();
@@ -14,8 +14,8 @@ public class AprovacaoGerente extends Handler {
             return;
         }
         System.out.println("\uD83D\uDDD9 REPROVADO: " + regra + "; Valor do pedido: " + valorTotalPedido);
-        System.out.println("-> Redirecionando para aprovação do Diretor...");
-        setNext(new AprovacaoDiretor());
+        System.out.println("-> Redirecionando para aprovação do CEO...");
+        setNext(new AprovacaoCFO());
         next.validar(pedido);
     }
 }
