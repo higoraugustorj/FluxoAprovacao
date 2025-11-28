@@ -1,5 +1,6 @@
 package Handlers.PedidoHandlers;
 
+import Handlers.MenuHandlers.MenuHandler;
 import Model.Pedidos.Pedido;
 
 public class PedidoRejeitadoHandler extends Handler {
@@ -12,5 +13,6 @@ public class PedidoRejeitadoHandler extends Handler {
         sleep();
         System.out.println("****************************************************");
         System.out.println("-> Processo Encerrado");
+        MenuHandler.iniciar();
     }
 }

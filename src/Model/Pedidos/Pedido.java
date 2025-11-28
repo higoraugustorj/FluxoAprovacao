@@ -21,7 +21,7 @@ public class Pedido {
         this.descricao = descricao;
         this.cotacoes = cotacoes;
         this.equipamentoTI = equipamentoTI;
-        this.numero = new Random().nextInt();
+        this.numero = new Random().nextInt(90000000) + 10000000;
         contarCotacoesValidas();
         definirCotacaoVencedora();
     }

@@ -1,5 +1,6 @@
 package Handlers.PedidoHandlers;
 
+import Handlers.MenuHandlers.MenuHandler;
 import Model.Pedidos.Pedido;
 
 public class MostrarPedidoAprovadoHandler extends Handler {
@@ -20,5 +21,6 @@ public class MostrarPedidoAprovadoHandler extends Handler {
         System.out.println("Valor do Produto: " + pedido.valor);
         System.out.println("Taxas: " + pedido.taxas);
         System.out.println("Valor total do Pedido: " + valorTotalPedido);
+        MenuHandler.iniciar();
     }
 }
