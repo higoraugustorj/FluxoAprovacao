@@ -20,10 +20,8 @@ public class AprovacaoDiretor extends Handler {
         if (aprovado.equals("s")) {
             System.out.println("\uD83C\uDD97 APROVADO: O Pedido com valor total de R$ " + valorTotalPedido + " foi aprovado pelo << Diretor >>");
             sleep();
-            if (valorTotalPedido >= limite) {
-                setNext(new AprovacaoCFO());
-                next.validar(pedido);
-            }
+            setNext(new MostrarPedidoAprovadoHandler());
+            next.validar(pedido);
             return;
         }
         System.out.println("\uD83D\uDDD9 REPROVADO: O pedido foi reprovado pelo << Diretor >>.");

@@ -23,7 +23,10 @@ public class AprovacaoGerente extends Handler {
             if (valorTotalPedido >= limite) {
                 setNext(new AprovacaoDiretor());
                 next.validar(pedido);
+                return;
             }
+            setNext(new MostrarPedidoAprovadoHandler());
+            next.validar(pedido);
             return;
         }
         System.out.println("\uD83D\uDDD9 REPROVADO: O pedido foi reprovado pelo << Gerente >>.");

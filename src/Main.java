@@ -13,6 +13,6 @@ public class Main {
 
         Handler inicio = new MostrarDadosHandler();
 
-        inicio.validar(pedidoStopCollars);
+        inicio.validar(pedidoCentralizadores);
     }
 }

@@ -3,6 +3,7 @@ package Model.Pedidos;
 import Model.Cotacoes.Cotacao;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Pedido {
     public int numero;
@@ -20,6 +21,7 @@ public class Pedido {
         this.descricao = descricao;
         this.cotacoes = cotacoes;
         this.equipamentoTI = equipamentoTI;
+        this.numero = new Random().nextInt();
         contarCotacoesValidas();
         definirCotacaoVencedora();
     }
