@@ -7,8 +7,8 @@ public class OrcamentoFinanceiroHandler extends Handler {
     @Override
     public void validar(Pedido pedido) {
         sleep();
+        System.out.println("****************************************************");
         System.out.println("--> Etapa: << Orçamento Financeiro >>");
-        sleep();
         System.out.println("? Regra: O valor total do Pedido (Valor + Impostos) deve estar dentro do Orçamento de R$ " + orcamento);
         sleep();
         Double valorTotalPedido = pedido.valor + pedido.taxas;

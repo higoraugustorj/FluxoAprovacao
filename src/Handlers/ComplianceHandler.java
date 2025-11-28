@@ -6,8 +6,8 @@ public class ComplianceHandler extends Handler {
     @Override
     public void validar(Pedido pedido) {
         sleep();
+        System.out.println("****************************************************");
         System.out.println("--> Etapa: << Validação Compliance >>");
-        sleep();
         System.out.println("? Regra: Pedido deve conter no mínimo três cotações de Fornecedores aprovados");
         sleep();
         if (pedido.cotacoesValidas >= 3) {

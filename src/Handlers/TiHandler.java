@@ -7,8 +7,8 @@ public class TiHandler extends Handler {
     @Override
     public void validar(Pedido pedido) {
         sleep();
+        System.out.println("****************************************************");
         System.out.println("--> Etapa: << Validação TI >>");
-        sleep();
         System.out.println("? Regra: Pedidos de equipamentos de TI devem ser realizados apenas pelo Almoxarifado");
         sleep();
         if (!pedido.equipamentoTI) {

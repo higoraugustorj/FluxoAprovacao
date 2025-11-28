@@ -12,10 +12,10 @@ public class MostrarDadosHandler extends Handler {
     public void validar(Pedido pedido) {
         sleep();
         System.out.println(":: Gatilho: << Novo Pedido Realizado >>");
-        System.out.println(":: Processo iniciado: << Fluxo de Aprovação >>");
+        System.out.println(":: Processo iniciado: << Fluxo de Aprovação >>\n");
         sleep();
+        System.out.println("****************************************************");
         System.out.println("--> Etapa: << Mostrar dados do Pedido >>\n");
-        sleep();
         pedido.mostrarDados();
         next.validar(pedido);
     }
