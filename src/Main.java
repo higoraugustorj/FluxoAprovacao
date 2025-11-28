@@ -1,5 +1,6 @@
-import Handlers.Handler;
-import Handlers.MostrarDadosHandler;
+import Handlers.MenuHandlers.MenuHandler;
+import Handlers.PedidoHandlers.Handler;
+import Handlers.PedidoHandlers.MostrarDadosHandler;
 import Model.Pedidos.Pedido;
 import Model.Pedidos.PedidosMock;
 
@@ -7,12 +8,6 @@ import Model.Pedidos.PedidosMock;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        Pedido pedidoCentralizadores = PedidosMock.getPedidoCentralizadores();
-        Pedido pedidoStopCollars = PedidosMock.getPedidoStopCollars();
-        Pedido pedidoFloatShoes = PedidosMock.getPedidoFloatShoes();
-
-        Handler inicio = new MostrarDadosHandler();
-
-        inicio.validar(pedidoCentralizadores);
+        MenuHandler.iniciar();
     }
 }

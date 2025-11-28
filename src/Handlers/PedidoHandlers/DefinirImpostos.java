@@ -1,4 +1,4 @@
-package Handlers;
+package Handlers.PedidoHandlers;
 
 import Model.Fornecedores.Nacionalidade;
 import Model.Pedidos.Pedido;
